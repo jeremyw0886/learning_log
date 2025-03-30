@@ -1,5 +1,5 @@
 Django==5.1
-asgiref==3.8
+asgiref==4
 django-bootstrap5==25.1
 gunicorn==23.0.0
 platformshconfig==2.4.0
