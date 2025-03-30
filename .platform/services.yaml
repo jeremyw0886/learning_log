@@ -2,5 +2,8 @@
 #    Platform.sh project.
 
 db:
-    type: "postgresql:13"
-    disk: 1024
+    type: "postgresql:15"
+    disk: 512
+    endpoints:
+        database:
+            public: false
