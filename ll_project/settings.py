@@ -27,7 +27,7 @@ SECRET_KEY = (
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['learning-log-project-6a50b2d49aa8.herokuapp.com']
 
 
 # Application definition
