@@ -2,6 +2,7 @@ Django==4.1
 asgiref==3.5.2
 beautifulsoup4==4.11.1
 django-bootstrap5==21.3
+dj-database-url
 gunicorn
 platformshconfig==2.4.0
 psycopg2
