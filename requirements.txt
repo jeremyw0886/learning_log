@@ -1,8 +1,9 @@
-Django==5.1
-asgiref==4
-django-bootstrap5==25.1
-gunicorn==23.0.0
+Django==4.1
+asgiref==3.5.2
+beautifulsoup4==4.11.1
+django-bootstrap5==21.3
+gunicorn
 platformshconfig==2.4.0
-psycopg2-binary==2.9.10
+psycopg2
 soupsieve==2.3.2.post1
-sqlparse==0.5.3
+sqlparse==0.4.2
