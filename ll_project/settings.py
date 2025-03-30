@@ -9,9 +9,7 @@ https://docs.djangoproject.com/en/5.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.1/ref/settings/
 """
-
 import os
-import dj_database_url
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -84,6 +82,8 @@ WSGI_APPLICATION = "ll_project.wsgi.application"
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
 # Use PostgreSQL on Heroku, fallback to SQLite locally.
+import dj_database_url
+
 DATABASES = {
     'default': dj_database_url.config(
         default=f'sqlite:///{BASE_DIR / "db.sqlite3"}'
@@ -139,26 +139,26 @@ LOGIN_URL = "accounts:login"
 LOGOUT_URL = "accounts:logout"
 
 # Platform.sh settings.
-from platformshconfig import Config
+# from platformshconfig import Config
 
-config = Config()
-if config.is_valid_platform():
-    ALLOWED_HOSTS.append('.platformsh.site')
+# config = Config()
+# if config.is_valid_platform():
+#     ALLOWED_HOSTS.append('.platformsh.site')
 
-    if config.appDir:
-        STATIC_ROOT = Path(config.appDir) / 'static'
-    if config.projectEntropy:
-        SECRET_KEY = config.projectEntropy
+#     if config.appDir:
+#         STATIC_ROOT = Path(config.appDir) / 'static'
+#     if config.projectEntropy:
+#         SECRET_KEY = config.projectEntropy
 
-    if not config.in_build():
-        db_settings = config.credentials('database')
-        DATABASES = {
-            'default': {
-                'ENGINE': 'django.db.backends.postgresql',
-                'NAME': db_settings['name'],
-                'USER': db_settings['username'],
-                'PASSWORD': db_settings['password'],
-                'HOST': db_settings['host'],
-                'PORT': db_settings['port'],
-            }
-        }
+#     if not config.in_build():
+#         db_settings = config.credentials('database')
+#         DATABASES = {
+#             'default': {
+#                 'ENGINE': 'django.db.backends.postgresql',
+#                 'NAME': db_settings['name'],
+#                 'USER': db_settings['username'],
+#                 'PASSWORD': db_settings['password'],
+#                 'HOST': db_settings['host'],
+#                 'PORT': db_settings['port'],
+#             }
+#         }
